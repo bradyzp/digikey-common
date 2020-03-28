@@ -1,0 +1,549 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v3",
+        "title": "Order Details",
+        "description": "Retrieve information about current and past orders.",
+        "contact": {
+            "name": "API Support",
+            "url": "https:\/\/developer.digikey.com\/support",
+            "email": "api.contact@digikey.com"
+        }
+    },
+    "host": "api.digikey.com",
+    "x-host-sandbox": "sandbox-api.digikey.com",
+    "x-host-production": "api.digikey.com",
+    "basePath": "\/OrderDetails\/v3",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "\/Status\/{SalesorderId}": {
+            "get": {
+                "tags": [
+                    "OrderDetails"
+                ],
+                "summary": "Retrieve order status for given SalesorderId",
+                "operationId": "OrderStatus",
+                "consumes": [],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "SalesorderId",
+                        "in": "path",
+                        "description": "SalesorderId belonging to you or your company that you wish to lookup",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "Includes",
+                        "in": "query",
+                        "description": "Comma separated list of fields to return. Used to customize response to reduce bandwidth with\r\nfields that you do not wish to receive. For example: \"SalesorderId,ShippingDetails\"",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" style=\"color:blue\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-DIGIKEY-Client-Id",
+                        "in": "header",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#\/definitions\/OrderStatusResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized - Token is expired or client Id or subscription are invalid",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests - Your rate limit has been exceeded",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - The request is denied",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable - The service is temporarily unavailable",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "\/History": {
+            "get": {
+                "tags": [
+                    "OrderDetails"
+                ],
+                "summary": "Retrieves a list of SalesorderIds and dates for all Salesorders within a date range belonging to a CustomerId.",
+                "operationId": "OrderHistory",
+                "consumes": [],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "CustomerId",
+                        "in": "query",
+                        "description": "CustomerId that is on the Digi-Key account with which you authenticated. If not provided, will\r\ndefault to the first CustomerId on the Digi-Key account.",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32",
+                        "default": 0
+                    },
+                    {
+                        "name": "OpenOnly",
+                        "in": "query",
+                        "description": "If true will only return open orders. If false, will return open and closed orders.",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "IncludeCompanyOrders",
+                        "in": "query",
+                        "description": "Include all company orders for the location associated with the given CustomerId.",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "StartDate",
+                        "in": "query",
+                        "description": "Begining of date range in ISO 8601 format. For example: 2018-10-31",
+                        "required": false,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "EndDate",
+                        "in": "query",
+                        "description": "End of date range in ISO 8601 format. For example: 2018-10-31",
+                        "required": false,
+                        "type": "string",
+                        "default": ""
+                    },
+                    {
+                        "name": "Includes",
+                        "in": "query",
+                        "description": "Comma separated list of fields to return. Used to customize response to reduce bandwidth with\r\nfields that you do not wish to receive. For example: \"SalesOrderId,PurchaseOrder\"",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "OAuth Bearer Token. Please see<a href= \"https:\/\/developer.digikey.com\/documentation\/oauth\" style=\"color:blue\" target= \"_blank\" > OAuth 2.0 Documentation <\/a > page for more info.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-DIGIKEY-Client-Id",
+                        "in": "header",
+                        "description": "The Client Id for your App.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "uniqueItems": false,
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/SalesorderHistoryItem"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized - Token is expired or client Id or subscription are invalid",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests - Your rate limit has been exceeded",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - The request is denied",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    },
+                    "503": {
+                        "description": "Service Unavailable - The service is temporarily unavailable",
+                        "schema": {
+                            "$ref": "#\/definitions\/ApiErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "apiKeySecurity": {
+            "type": "apiKey",
+            "name": "X-DIGIKEY-Client-Id",
+            "in": "header"
+        },
+        "oauth2AccessCodeSecurity": {
+            "type": "oauth2",
+            "flow": "accessCode",
+            "authorizationUrl": "https:\/\/api.digikey.com\/v1\/oauth2\/authorize",
+            "tokenUrl": "https:\/\/api.digikey.com\/v1\/oauth2\/token"
+        }
+    },
+    "security": [
+        {
+            "apiKeySecurity": [],
+            "oauth2AccessCodeSecurity": []
+        }
+    ],
+    "definitions": {
+        "OrderStatusResponse": {
+            "description": "OrderStatus response model",
+            "type": "object",
+            "properties": {
+                "SalesorderId": {
+                    "format": "int32",
+                    "description": "Id for this order",
+                    "type": "integer",
+                    "example": "123456789"
+                },
+                "CustomerId": {
+                    "format": "int32",
+                    "description": "Your Digi-Key customer Id",
+                    "type": "integer",
+                    "example": "123456789"
+                },
+                "BillingAccount": {
+                    "format": "int32",
+                    "description": "Net Terms billing account number used for the order.",
+                    "type": "integer",
+                    "example": "123456789"
+                },
+                "Email": {
+                    "description": "Email Address",
+                    "type": "string",
+                    "example": "jsmith@universalexampleemail.com"
+                },
+                "PurchaseOrder": {
+                    "description": "Freeform purchase order",
+                    "type": "string",
+                    "example": "3129082341"
+                },
+                "PaymentMethod": {
+                    "description": "Payment method for the order",
+                    "type": "string",
+                    "example": "ACCOUNT"
+                },
+                "ShippingMethod": {
+                    "description": "Shipping method requested",
+                    "type": "string",
+                    "example": "Fedex Economy"
+                },
+                "BackorderShippingMethod": {
+                    "description": "Backorder shipping method requested",
+                    "type": "string",
+                    "example": "Fedex Economy"
+                },
+                "ShipperAccountNumber": {
+                    "description": "Account number with the shipper",
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "BackorderShipperAccountNumber": {
+                    "description": "Account number with the backorder shipper",
+                    "type": "string",
+                    "example": "123456789"
+                },
+                "ShipmentType": {
+                    "description": "Can be Immediate, Double or Single. If Immediate, all items will ship as available. If Double, all items immediately available will ship, and other items will be held untill all are available. If Single, entire order is held untill all items are available.",
+                    "type": "string",
+                    "example": "Immediate"
+                },
+                "Currency": {
+                    "description": "ISO code for currency used in the order.",
+                    "type": "string",
+                    "example": "USD"
+                },
+                "ShippingAddress": {
+                    "$ref": "#\/definitions\/Address",
+                    "description": "Address for the shipping destination"
+                },
+                "BillingAddress": {
+                    "$ref": "#\/definitions\/Address",
+                    "description": "Address for the billing contact"
+                },
+                "ShippingDetails": {
+                    "description": "List of shipping details",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/ShippingDetail"
+                    }
+                },
+                "LineItems": {
+                    "description": "List of line items",
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/LineItem"
+                    }
+                }
+            }
+        },
+        "Address": {
+            "description": "Address information for billing or shipping contacts",
+            "type": "object",
+            "properties": {
+                "Company": {
+                    "description": "Company or Organization name",
+                    "type": "string",
+                    "example": "Universal Solutions"
+                },
+                "FirstName": {
+                    "description": "First Name",
+                    "type": "string",
+                    "example": "John"
+                },
+                "LastName": {
+                    "description": "Last Name",
+                    "type": "string",
+                    "example": "Smith"
+                },
+                "AddressLineOne": {
+                    "description": "First line of address",
+                    "type": "string",
+                    "example": "Mailstop 15"
+                },
+                "AddressLineTwo": {
+                    "description": "Second line of address",
+                    "type": "string",
+                    "example": "1000 Main Street"
+                },
+                "AddressLineThree": {
+                    "description": "Third line of address",
+                    "type": "string",
+                    "example": "Suite 300"
+                },
+                "City": {
+                    "description": "City",
+                    "type": "string",
+                    "example": "Bloomington"
+                },
+                "Province": {
+                    "description": "Province or State",
+                    "type": "string",
+                    "example": "MN"
+                },
+                "PostalCode": {
+                    "description": "Postal Code or Zip Code",
+                    "type": "string",
+                    "example": "554250000"
+                },
+                "Country": {
+                    "description": "Country 2 digit ISO code",
+                    "type": "string",
+                    "example": "US"
+                }
+            }
+        },
+        "ShippingDetail": {
+            "description": "Shipping information for a single shipment of an order",
+            "type": "object",
+            "properties": {
+                "Carrier": {
+                    "description": "Name of the carrier",
+                    "type": "string",
+                    "example": "FedEx"
+                },
+                "CarrierPackageId": {
+                    "description": "Id assigned by the carrier",
+                    "type": "string",
+                    "example": "123456789123456789"
+                },
+                "DateTransaction": {
+                    "description": "Date that tracking number was generated in ISO 8601 format",
+                    "type": "string",
+                    "example": "2019-05-30T21:16:13.7526329Z"
+                },
+                "ShippingMethod": {
+                    "description": "Shipping method used by this shipment",
+                    "type": "string",
+                    "example": "FedEx Ground"
+                },
+                "TrackingUrl": {
+                    "type": "string"
+                },
+                "InvoiceId": {
+                    "format": "int32",
+                    "description": "The Invoice Id for this shipment",
+                    "type": "integer",
+                    "example": "12345678"
+                },
+                "CanceledOrVoided": {
+                    "description": "Whether this individual detail has been canceled or voided.",
+                    "type": "boolean",
+                    "example": "false"
+                }
+            }
+        },
+        "LineItem": {
+            "description": "Information on a single line item of an order",
+            "type": "object",
+            "properties": {
+                "DigiKeyPartNumber": {
+                    "description": "The Digi-Key part number.",
+                    "type": "string",
+                    "example": "P5555-ND"
+                },
+                "ProductDescription": {
+                    "description": "Catalog description of the product.",
+                    "type": "string",
+                    "example": "CAP ALUM 1000UF 20% 35V RADIAL"
+                },
+                "Quantity": {
+                    "format": "int32",
+                    "description": "The total quantity for the order.",
+                    "type": "integer",
+                    "example": "100"
+                },
+                "CustomerReference": {
+                    "description": "Freeform customer reference",
+                    "type": "string",
+                    "example": "8972387"
+                },
+                "UnitPrice": {
+                    "format": "double",
+                    "description": "The price for a single unit of this product.",
+                    "type": "number",
+                    "example": ".13"
+                },
+                "TotalPrice": {
+                    "format": "double",
+                    "description": "Price of ordered quantity of the product.",
+                    "type": "number",
+                    "example": "13.00"
+                },
+                "QuantityBackorder": {
+                    "format": "int32",
+                    "description": "The quantity on backorder",
+                    "type": "integer",
+                    "example": "50"
+                },
+                "QuantityShipped": {
+                    "format": "int64",
+                    "description": "The quantity shipped",
+                    "type": "integer",
+                    "example": "50"
+                },
+                "InvoiceId": {
+                    "format": "int64",
+                    "description": "The Invoice Id for this shipment",
+                    "type": "integer",
+                    "example": "12345678"
+                }
+            }
+        },
+        "ApiErrorResponse": {
+            "type": "object",
+            "properties": {
+                "ErrorResponseVersion": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "StatusCode": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "ErrorMessage": {
+                    "type": "string"
+                },
+                "ErrorDetails": {
+                    "type": "string"
+                },
+                "RequestId": {
+                    "type": "string"
+                },
+                "ValidationErrors": {
+                    "uniqueItems": false,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#\/definitions\/ApiValidationError"
+                    }
+                }
+            }
+        },
+        "ApiValidationError": {
+            "type": "object",
+            "properties": {
+                "Field": {
+                    "type": "string",
+                    "readOnly": true
+                },
+                "Message": {
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "SalesorderHistoryItem": {
+            "description": "Information pertaining to a single Salesorder",
+            "type": "object",
+            "properties": {
+                "SalesorderId": {
+                    "format": "int32",
+                    "description": "The Salesorder Id. You can use this Id to look up details on the order.",
+                    "type": "integer",
+                    "example": "12345678"
+                },
+                "CustomerId": {
+                    "format": "int32",
+                    "description": "The CustomerId associated with the Salesorder",
+                    "type": "integer",
+                    "example": "123456789"
+                },
+                "DateEntered": {
+                    "description": "Date in which the order was entered in ISO 8601 format.",
+                    "type": "string",
+                    "example": "2019-05-30T21:16:13.7526329Z"
+                },
+                "PurchaseOrder": {
+                    "description": "Purchase order if available",
+                    "type": "string",
+                    "example": "89u3489523"
+                }
+            }
+        }
+    },
+    "tags": []
+}

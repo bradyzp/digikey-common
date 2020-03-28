@@ -1,0 +1,306 @@
+{
+  "DigiKeyPartNumber": "P5555-ND",
+  "QuantityAvailable": "22440",
+  "ManufacturerPartNumber": "ECA-1VHG102",
+  "Manufacturer": {
+    "ParameterId": "69",
+    "ValueId": "80",
+    "Parameter": "Mounting Type",
+    "Value": "Through Hole"
+  },
+  "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+  "DetailedDescription": "1000µF 35V Aluminum Electrolytic Capacitors Radial, Can  2000 Hrs @ 105°C",
+  "Packaging": {
+    "ParameterId": "69",
+    "ValueId": "80",
+    "Parameter": "Mounting Type",
+    "Value": "Through Hole"
+  },
+  "MinimumOrderQuantity": "1",
+  "NonStock": "false",
+  "QuantityOnOrder": "0",
+  "ManufacturerPublicQuantity": "0",
+  "UnitPrice": "0.86",
+  "StandardPricing": [
+    {
+      "BreakQuantity": "10",
+      "UnitPrice": "0.65",
+      "TotalPrice": "6.5"
+    }
+  ],
+  "MyPricing": [
+    {
+      "BreakQuantity": "10",
+      "UnitPrice": "0.65",
+      "TotalPrice": "6.5"
+    }
+  ],
+  "AdditionalValueFee": "0",
+  "TariffDescription": "No Tariff",
+  "ProductUrl": "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ECA-1VHG102/P5555-ND/245154",
+  "DateLastBuyChance": "2019-06-20T17:07:35.797Z",
+  "Series": {
+    "ParameterId": "69",
+    "ValueId": "80",
+    "Parameter": "Mounting Type",
+    "Value": "Through Hole"
+  },
+  "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/p/panasonic",
+  "Obsolete": "false",
+  "ManufacturerLeadWeeks": "15 weeks",
+  "ProductStatus": "Active",
+  "StandardPackage": "200",
+  "MediaLinks": [
+    {
+      "MediaType": "Product Photos",
+      "Title": "NHG12-SERIES",
+      "SmallPhoto": "http://media.digikey.com/Photos/Panasonic%20Photos/NHG12-SERIES_sml.jpg",
+      "Thumbnail": "http://media.digikey.com/Photos/Panasonic%20Photos/NHG12-SERIES_tmb.jpg",
+      "Url": "http://media.digikey.com/Photos/Panasonic%20Photos/NHG12-SERIES.jpg"
+    }
+  ],
+  "PrimaryDatasheet": "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1215.pdf",
+  "PrimaryPhoto": "http://media.digikey.com/Photos/Panasonic%20Photos/NHG12-SERIES.jpg",
+  "PrimaryVideo": "https://www.digikey.com/api/videos/videoplayer/smallplayer/5768977450001",
+  "RoHSStatus": "RoHS Compliant",
+  "LeadStatus": "Lead Free",
+  "Parameters": [
+    {
+      "ParameterId": "69",
+      "ValueId": "80",
+      "Parameter": "Mounting Type",
+      "Value": "Through Hole"
+    }
+  ],
+  "Kits": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "KitContents": [
+    {
+      "AssociatedProduct": {
+        "DigiKeyPartNumber": "P5555-ND",
+        "QuantityAvailable": "22440",
+        "ManufacturerPartNumber": "ECA-1VHG102",
+        "Manufacturer": {
+          "ParameterId": "69",
+          "ValueId": "80",
+          "Parameter": "Mounting Type",
+          "Value": "Through Hole"
+        },
+        "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+        "Packaging": {
+          "ParameterId": "69",
+          "ValueId": "80",
+          "Parameter": "Mounting Type",
+          "Value": "Through Hole"
+        },
+        "MinimumOrderQuantity": "1",
+        "NonStock": "false",
+        "QuantityOnOrder": "0",
+        "ManufacturerPublicQuantity": "0",
+        "UnitPrice": "0.86",
+        "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+      },
+      "KitPartQuantity": "5"
+    }
+  ],
+  "MatingProducts": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "AssociatedProducts": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "ForUseWithProducts": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "RohsSubs": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "SuggestedSubs": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86",
+      "ProductUrl": "https://www.digikey.com/product-detail/en/omron-automation-and-safety/NB-CN001/Z9825-ND/3474837"
+    }
+  ],
+  "AlternatePackaging": [
+    {
+      "DigiKeyPartNumber": "P5555-ND",
+      "QuantityAvailable": "22440",
+      "ManufacturerPartNumber": "ECA-1VHG102",
+      "Manufacturer": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "ProductDescription": "CAP ALUM 1000UF 20% 35V RADIAL",
+      "Packaging": {
+        "ParameterId": "69",
+        "ValueId": "80",
+        "Parameter": "Mounting Type",
+        "Value": "Through Hole"
+      },
+      "MinimumOrderQuantity": "1",
+      "NonStock": "false",
+      "QuantityOnOrder": "0",
+      "ManufacturerPublicQuantity": "0",
+      "UnitPrice": "0.86"
+    }
+  ],
+  "Footprint": "true",
+  "ReachStatus": "Reach unknown",
+  "ExportControlClassNumber": "EAR99",
+  "HTSUSCode": "8532.22.0020",
+  "LimitedTaxonomy": {
+    "Children": [
+      null
+    ],
+    "ProductCount": "1",
+    "NewProductCount": "0",
+    "ParameterId": "69",
+    "ValueId": "80",
+    "Parameter": "Mounting Type",
+    "Value": "Through Hole"
+  },
+  "SearchLocaleUsed": {
+    "Site": "US",
+    "Language": "en",
+    "Currency": "USD",
+    "ShipToCountry": "US"
+  }
+}
