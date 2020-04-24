@@ -11,7 +11,8 @@
  */
 package net.jastrab.digikey.model.ordersupport
 
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.databind.PropertyNamingStrategy
+import com.fasterxml.jackson.databind.annotation.JsonNaming
 import java.math.BigDecimal
 
 
@@ -28,33 +29,30 @@ import java.math.BigDecimal
  * @param invoiceId The Invoice Id for this shipment
  */
 
+@JsonNaming(PropertyNamingStrategy.UpperCamelCaseStrategy::class)
 data class LineItem(
     /* The Digi-Key part number. */
-    @JsonProperty("DigiKeyPartNumber")
-    val digiKeyPartNumber: String? = null,
+    val digiKeyPartNumber: String,
     /* Catalog description of the product. */
-    @JsonProperty("ProductDescription")
-    val productDescription: String? = null,
+    val productDescription: String,
+    /* Name of the manufacturer of this item */
+    val manufacturer: String,
+    /* The manufacturer part number for this item */
+    val manufacturerPartNumber: String,
+    val countryOfOrigin: String?,
     /* The total quantity for the order. */
-    @JsonProperty("Quantity")
-    val quantity: Int? = null,
+    val quantity: Int,
     /* Free-form customer reference */
-    @JsonProperty("CustomerReference")
-    val customerReference: String? = null,
+    val customerReference: String?,
     /* The price for a single unit of this product. */
-    @JsonProperty("UnitPrice")
-    val unitPrice: BigDecimal? = null,
+    val unitPrice: BigDecimal,
     /* Price of ordered quantity of the product. */
-    @JsonProperty("TotalPrice")
-    val totalPrice: BigDecimal? = null,
+    val totalPrice: BigDecimal,
     /* The quantity on backorder */
-    @JsonProperty("QuantityBackorder")
-    val quantityBackorder: Int? = null,
+    val quantityBackorder: Int?,
     /* The quantity shipped */
-    @JsonProperty("QuantityShipped")
-    val quantityShipped: Long? = null,
+    val quantityShipped: Long?,
     /* The Invoice Id for this shipment */
-    @JsonProperty("InvoiceId")
-    val invoiceId: Long? = null
+    val invoiceId: Long?
 )
 

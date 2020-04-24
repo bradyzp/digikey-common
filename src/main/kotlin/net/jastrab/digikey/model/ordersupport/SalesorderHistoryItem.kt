@@ -25,10 +25,10 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class SalesorderHistoryItem(
     /* The Salesorder Id. You can use this Id to look up details on the order. */
     @JsonProperty("SalesorderId")
-    val salesorderId: Int? = null,
+    val salesorderId: String,
     /* The CustomerId associated with the Salesorder */
     @JsonProperty("CustomerId")
-    val customerId: Int? = null,
+    val customerId: String,
     /* Date in which the order was entered in ISO 8601 format. */
     @JsonProperty("DateEntered")
     val dateEntered: String? = null,

@@ -11,7 +11,9 @@
  */
 package net.jastrab.digikey.model.ordersupport
 
-import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.databind.PropertyNamingStrategy
+import com.fasterxml.jackson.databind.annotation.JsonNaming
 
 /**
  * OrderStatus response model returned from v3/Status/{SalesorderId} endpoint
@@ -33,52 +35,38 @@ import com.fasterxml.jackson.annotation.JsonProperty
  * @param lineItems List of line items
  */
 
+@JsonNaming(PropertyNamingStrategy.UpperCamelCaseStrategy::class)
 data class OrderStatus(
     /* Id for this order */
-    @JsonProperty("SalesorderId")
-    val salesorderId: Int? = null,
+    val salesorderId: String,
+    val supplier: String?,
     /* Your Digi-Key customer Id */
-    @JsonProperty("CustomerId")
-    val customerId: Int? = null,
+    val customerId: String,
     /* Net Terms billing account number used for the order. */
-    @JsonProperty("BillingAccount")
-    val billingAccount: Int? = null,
+    val billingAccount: Int?,
     /* Email Address */
-    @JsonProperty("Email")
-    val email: String? = null,
+    val email: String?,
     /* Freeform purchase order */
-    @JsonProperty("PurchaseOrder")
-    val purchaseOrder: String? = null,
+    val purchaseOrder: String?,
     /* Payment method for the order */
-    @JsonProperty("PaymentMethod")
-    val paymentMethod: String? = null,
+    val paymentMethod: String?,
     /* Shipping method requested */
-    @JsonProperty("ShippingMethod")
-    val shippingMethod: String? = null,
+    val shippingMethod: String?,
     /* Backorder shipping method requested */
-    @JsonProperty("BackorderShippingMethod")
-    val backorderShippingMethod: String? = null,
+    val backorderShippingMethod: String?,
     /* Account number with the shipper */
-    @JsonProperty("ShipperAccountNumber")
-    val shipperAccountNumber: String? = null,
+    val shipperAccountNumber: String?,
     /* Account number with the backorder shipper */
-    @JsonProperty("BackorderShipperAccountNumber")
-    val backorderShipperAccountNumber: String? = null,
+    val backorderShipperAccountNumber: String?,
     /* Can be Immediate, Double or Single. If Immediate, all items will ship as available. If Double, all items immediately available will ship, and other items will be held untill all are available. If Single, entire order is held untill all items are available. */
-    @JsonProperty("ShipmentType")
-    val shipmentType: String? = null,
+    val shipmentType: String?,
     /* ISO code for currency used in the order. */
-    @JsonProperty("Currency")
-    val currency: String? = null,
-    @JsonProperty("ShippingAddress")
-    val shippingAddress: Address? = null,
-    @JsonProperty("BillingAddress")
-    val billingAddress: Address? = null,
+    val currency: String?,
+    val shippingAddress: Address?,
+    val billingAddress: Address?,
     /* List of shipping details */
-    @JsonProperty("ShippingDetails")
     val shippingDetails: List<ShippingDetail> = ArrayList(),
     /* List of line items */
-    @JsonProperty("LineItems")
     val lineItems: List<LineItem> = ArrayList()
 )
 
